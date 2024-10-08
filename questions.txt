@@ -1,0 +1,52 @@
+1.if p then r
+2.q biconditional p or s
+3.q if and only if s
+4.if r then s
+5.if q then r
+6.s or r and q
+7.r or s
+8.r or p
+9.if and only if (if q then p) then s
+10.p if and only if s
+11.r if and only if p
+12.r implies p and s
+13.q if and only if s
+14.if s then p
+15.if and only if s and r then q
+16.r or s implies q
+17.p and s
+18.r biconditional p and s
+19.s if and only if p
+20.r or s and q
+21.s and q biconditional r
+22.if and only if r then q implies s
+23.q if and only if s
+24.r if and only if q
+25.r if and only if p
+26.r if and only if s
+27.r and p  biconditional q
+28.s or p and r
+29.if q or s then r
+30.p and r
+31.s or r
+32.s implies q and r
+33.if s then r
+34.p biconditional q or s
+35.q biconditional r and p
+36.p implies q and r
+37.q or r and p
+38.if and only if r or p then q
+39.if p then r and q
+40.q and s biconditional r
+41.r if and only if p
+42.s or q
+43.r or s and p
+44.q or p implies r
+45.r and q
+46.p implies r or q
+47.if and only if r implies q then p
+48.r or q and p
+
+
+
+

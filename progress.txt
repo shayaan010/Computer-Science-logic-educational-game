@@ -1,0 +1,46 @@
+for item in items:
+            item.handle_event(event)
+            if event.type == pygame.MOUSEBUTTONUP:
+                if item.check_collision_with_ans() and item.is_ans():
+                    feedback_message = "Correct!"
+                    print("Correct!!!")
+                else:
+                    feedback_message = "Wrong!"
+                    print("Wrong!!!")
+                    current_question_index = (current_question_index + 1) % len(questions)
+                    question_description_text = get_question_text()
+                    question_number_text = get_question_number_text()
+                    items = create_draggable_items()
+
+        if feedback_message:
+            feedback_text = font.render(feedback_message, True, red if feedback_message == "Wrong!" else green)
+            WIN.blit(feedback_text, (WIDTH // 2 - feedback_text.get_width() // 2, HEIGHT // 2 - feedback_text.get_height() // 2))
+
+
+BG = pygame.transform.scale(pygame.image.load("backgrounds/bg_offwhite.jpg"),(WIDTH, HEIGHT))
+
+
+
+for item in items:
+            item.handle_event(event)
+            if event.type == pygame.MOUSEBUTTONUP:
+                if item.check_collision_with_ans():
+                # Open the answers.txt file and read the correct answer for the current question
+                    with open('answers.txt', 'r') as f:
+                        all_answers = []
+                        for line in f:
+                            if '.' in line:
+                                line_text = line.split('.',1)[1].strip()
+                                all_answers.append(line_text)
+                        if current_question_index < len(all_answers):
+                            correct_answer = all_answers[current_question_index].strip()
+                        else:
+                            correct_answer = None  # or a sensible default
+                    if correct_answer and item.text == correct_answer:
+                        feedback_text = "Correct"
+                        current_question_index = (current_question_index + 1) % len(questions)
+                        question_description_text = get_question_text()
+                        question_number_text = get_question_number_text()
+                        items = create_draggable_items()
+                    else:
+                        feedback_text = "Wrong"
